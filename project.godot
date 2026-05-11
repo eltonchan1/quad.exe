@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="tetriselsliesversion"
+config/name="[quad.exe]"
 run/main_scene="uid://b4xyptdtg7pl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -27,6 +27,8 @@ flowerwall_crt="*uid://cc1fomjf362h5"
 
 window/size/viewport_width=768
 window/size/viewport_height=832
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -91,4 +93,5 @@ pause_exit={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 viewport/hdr_2d=true

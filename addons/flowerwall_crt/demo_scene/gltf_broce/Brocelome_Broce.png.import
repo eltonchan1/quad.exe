@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4e658lnu1ren"
 path.s3tc="res://.godot/imported/Brocelome_Broce.png-219a62ff488464d493a1ef95d461e45e.s3tc.ctex"
+path.etc2="res://.godot/imported/Brocelome_Broce.png-219a62ff488464d493a1ef95d461e45e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://addons/flowerwall_crt/demo_scene/gltf_broce/Brocelome_Broce.png"
-dest_files=["res://.godot/imported/Brocelome_Broce.png-219a62ff488464d493a1ef95d461e45e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Brocelome_Broce.png-219a62ff488464d493a1ef95d461e45e.s3tc.ctex", "res://.godot/imported/Brocelome_Broce.png-219a62ff488464d493a1ef95d461e45e.etc2.ctex"]
 
 [params]
 
