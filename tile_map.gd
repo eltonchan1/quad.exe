@@ -1,5 +1,12 @@
 extends Node2D
 
+# to add:
+# window resizing done
+# better sfx, bgm?
+# more remap buttons in settings (quick reset, pause/exit)
+# more gamemodes? 40l, blitz
+# settings music & sfx sound slider
+
 @onready var board_layer : TileMapLayer = $Game/board
 @onready var active_layer : TileMapLayer = $Game/active
 @onready var wave_material : ShaderMaterial = $"Game/Particles/CanvasLayer/ColorRect".material
@@ -298,6 +305,9 @@ func open_exit_confirm():
 
 func close_exit_confirm():
 	$MainMenu/PopUp/ExitConfirm.visible = false
+
+func _on_continue_pressed() -> void:
+	close_pause_menu()
 
 func _on_pause_restart_pressed() -> void:
 	close_pause_menu()
@@ -1046,6 +1056,12 @@ func check_rows():
 					points = 800
 					is_difficult = true
 		# b2b mult
+		if is_board_empty():
+			points += 3500
+			is_difficult = true
+			$Game/HUD.get_node("AllClearLabel").text = "[all clear]"
+		else:
+			$Game/HUD.get_node("AllClearLabel").text = ""
 		if is_difficult and b2b_active:
 			points = int(points * 1.5)
 			b2b_count += 1
@@ -1068,13 +1084,6 @@ func check_rows():
 			$Game/HUD.get_node("ComboLabel").text = ""
 		last_clear_had_lines = true
 		play_combo_sound(combo_count)
-		if is_board_empty():
-			points += 3500
-			is_difficult = true
-			$Game/HUD.get_node("AllClearLabel").text = "[all clear]"
-		else:
-			$Game/HUD.get_node("AllClearLabel").text = ""
-		
 		score += points * level
 		$Game/HUD.get_node("ScoreLabel").text = "[" + str(score) + "]"
 	

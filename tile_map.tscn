@@ -651,6 +651,48 @@ mouse_filter = 0
 theme_override_font_sizes/font_size = 25
 text = "0"
 
+[node name="Label3" type="Label" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer" unique_id=782481041]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "[audio]"
+horizontal_alignment = 1
+
+[node name="SFXContainer" type="HBoxContainer" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer" unique_id=857579426]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SFX" type="Label" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/SFXContainer" unique_id=1735722972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "[sfx]"
+
+[node name="SFXSlider" type="HSlider" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/SFXContainer" unique_id=340816934]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="SettingsValue" type="Label" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/SFXContainer" unique_id=627943734]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[node name="BGMContainer" type="HBoxContainer" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer" unique_id=1024301577]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BGM" type="Label" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/BGMContainer" unique_id=943199939]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "[bgm]"
+
+[node name="BGMSlider" type="HSlider" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/BGMContainer" unique_id=807610610]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenu/PopUp/Settings/SettingsPanel/VBoxContainer/BGMContainer" unique_id=55971153]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+
 [node name="SettingsExitButton" type="Button" parent="MainMenu/PopUp/Settings" unique_id=408030468]
 z_index = 100
 layout_mode = 1
@@ -784,10 +826,10 @@ z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2224.0
-offset_top = -1184.0
-offset_right = 3064.0
-offset_bottom = 1936.0
+offset_left = -2160.0
+offset_top = -1392.0
+offset_right = 3128.0
+offset_bottom = 1728.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -1049,6 +1091,11 @@ offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Continue" type="Button" parent="Game/PauseMenu/VBoxContainer" unique_id=1195966151]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "[continue]"
+
 [node name="Restart" type="Button" parent="Game/PauseMenu/VBoxContainer" unique_id=1860935217]
 layout_mode = 2
 size_flags_vertical = 3
@@ -1066,9 +1113,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 50
 text = "[return to menu]"
-
-[node name="Continue" type="Button" parent="Game/PauseMenu/VBoxContainer" unique_id=1195966151]
-layout_mode = 2
 
 [node name="GameOverMenu" type="Control" parent="Game" unique_id=1103022473]
 layout_mode = 3
@@ -1188,6 +1232,7 @@ text = "[return to menu]"
 [connection signal="pressed" from="MainMenu/PopUp/Settings/SettingsExitButton" to="." method="_on_settings_exit_button_pressed"]
 [connection signal="pressed" from="MainMenu/PopUp/ExitConfirm/YesButton" to="." method="_on_exit_confirm_yes_pressed"]
 [connection signal="pressed" from="MainMenu/PopUp/ExitConfirm/NoButton" to="." method="_on_exit_confirm_no_pressed"]
+[connection signal="pressed" from="Game/PauseMenu/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Game/PauseMenu/VBoxContainer/Restart" to="." method="_on_pause_restart_pressed"]
 [connection signal="pressed" from="Game/PauseMenu/VBoxContainer/Settings" to="." method="_on_pause_settings_pressed"]
 [connection signal="pressed" from="Game/PauseMenu/VBoxContainer/PauseQuit" to="." method="_on_pause_quit_pressed"]
